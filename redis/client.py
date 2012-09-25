@@ -926,10 +926,13 @@ class StrictRedis(object):
         "Remove and return a random member of set ``name``"
         return self.execute_command('SPOP', name)
 
-    def srandmember(self, name):
-        "Return a random member of set ``name``"
-        return self.execute_command('SRANDMEMBER', name)
-
+    def srandmember(self, name, number=1):
+        """
+        Return a random member of set ``name`` Optional number 
+        returns that many random elements in an array
+        """
+        return self.execute_command('SRANDMEMBER', name, number)
+        
     def srem(self, name, *values):
         "Remove ``values`` from set ``name``"
         return self.execute_command('SREM', name, *values)

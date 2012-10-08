@@ -965,7 +965,7 @@ class StrictRedis(object):
         If ``number`` is None, returns a random member of set ``name``.
 
         If ``number`` is supplied, returns a list of ``number`` random
-        memebers of set ``name``. Note this is only available when running
+        members of set ``name``. Note this is only available when running
         Redis 2.6+.
         """
         args = number and [number] or []
